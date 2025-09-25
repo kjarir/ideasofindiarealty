@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
+import { LucideIcon } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,14 +9,13 @@ import { Link } from "react-router-dom";
 interface ServiceTemplateProps {
   title: string;
   description: string;
-  icon: ReactNode;
+  icon: LucideIcon;
   services: Array<{
-    title: string;
-    description: string;
+    category: string;
     items: string[];
   }>;
-  benefits: string[];
-  process: Array<{
+  benefits?: string[];
+  process?: Array<{
     step: number;
     title: string;
     description: string;
@@ -30,7 +30,7 @@ const ServiceTemplate = ({ title, description, icon, services, benefits, process
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              {icon}
+              {React.createElement(icon, { className: "w-10 h-10 text-white" })}
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
               {title}
@@ -52,8 +52,7 @@ const ServiceTemplate = ({ title, description, icon, services, benefits, process
               {services.map((service, index) => (
                 <Card key={index} className="shadow-card border-0 hover-lift">
                   <CardHeader>
-                    <CardTitle className="text-xl">{service.title}</CardTitle>
-                    <CardDescription>{service.description}</CardDescription>
+                    <CardTitle className="text-xl">{service.category}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-2">
@@ -78,18 +77,20 @@ const ServiceTemplate = ({ title, description, icon, services, benefits, process
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Why Choose Our Services</h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center shadow-card border-0 hover-lift">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="w-6 h-6 text-primary" />
-                    </div>
-                    <p className="font-medium">{benefit}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            {benefits && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {benefits.map((benefit, index) => (
+                  <Card key={index} className="text-center shadow-card border-0 hover-lift">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-6 h-6 text-primary" />
+                      </div>
+                      <p className="font-medium">{benefit}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
@@ -127,31 +128,33 @@ const ServiceTemplate = ({ title, description, icon, services, benefits, process
       </section>
 
       {/* Process Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Our Process</h2>
-            
-            <div className="space-y-6">
-              {process.map((step, index) => (
-                <Card key={index} className="shadow-card border-0 hover-lift">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                        {step.step}
+      {process && (
+        <section className="py-16 lg:py-24">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Our Process</h2>
+              
+              <div className="space-y-6">
+                {process.map((step, index) => (
+                  <Card key={index} className="shadow-card border-0 hover-lift">
+                    <CardContent className="p-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                          {step.step}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
+                          <p className="text-muted-foreground">{step.description}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
-                        <p className="text-muted-foreground">{step.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 lg:py-24 bg-primary-light">

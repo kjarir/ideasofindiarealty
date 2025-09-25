@@ -94,8 +94,8 @@ const MantralayaServices = () => {
     <ServiceTemplate
       title="Mantralaya & Revenue Department Services"
       description="Navigate complex state-level approvals and revenue documentation with our expert assistance. We ensure compliance with all Mantralaya procedures and revenue department requirements."
-      icon={<Landmark className="w-10 h-10 text-white" />}
-      services={services}
+      icon={Landmark}
+      services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}
       process={process}
     />

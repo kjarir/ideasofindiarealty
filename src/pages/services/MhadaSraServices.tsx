@@ -94,8 +94,8 @@ const MhadaSraServices = () => {
     <ServiceTemplate
       title="MHADA & SRA Services"
       description="Expert assistance with MHADA approvals, SRA clearances, and comprehensive redevelopment services for housing projects."
-      icon={<Home className="w-10 h-10 text-white" />}
-      services={services}
+      icon={Home}
+      services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}
       process={process}
     />

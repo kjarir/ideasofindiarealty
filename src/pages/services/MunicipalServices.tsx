@@ -94,8 +94,8 @@ const MunicipalServices = () => {
     <ServiceTemplate
       title="BMC/Municipal Corporation Services"
       description="Navigate municipal approvals, building permissions, and local body clearances with our comprehensive municipal services expertise."
-      icon={<Building className="w-10 h-10 text-white" />}
-      services={services}
+      icon={Building}
+      services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}
       process={process}
     />

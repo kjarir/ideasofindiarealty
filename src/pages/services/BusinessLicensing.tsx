@@ -94,8 +94,8 @@ const BusinessLicensing = () => {
     <ServiceTemplate
       title="Business Licensing & Compliance"
       description="Comprehensive business registration, licensing, and ongoing compliance management. We handle all aspects of your business setup and regulatory requirements."
-      icon={<FileText className="w-10 h-10 text-white" />}
-      services={services}
+      icon={FileText}
+      services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}
       process={process}
     />

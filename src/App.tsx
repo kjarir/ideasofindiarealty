@@ -10,6 +10,9 @@ import MantralayaServices from "./pages/services/MantralayaServices";
 import BusinessLicensing from "./pages/services/BusinessLicensing";
 import MunicipalServices from "./pages/services/MunicipalServices";
 import MhadaSraServices from "./pages/services/MhadaSraServices";
+import RealEstateServices from "./pages/services/RealEstateServices";
+import RegulatoryServices from "./pages/services/RegulatoryServices";
+import MidcSidcoServices from "./pages/services/MidcSidcoServices";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +31,9 @@ const App = () => (
           <Route path="/services/business-licensing" element={<BusinessLicensing />} />
           <Route path="/services/municipal" element={<MunicipalServices />} />
           <Route path="/services/mhada-sra" element={<MhadaSraServices />} />
+          <Route path="/services/real-estate" element={<RealEstateServices />} />
+          <Route path="/services/regulatory" element={<RegulatoryServices />} />
+          <Route path="/services/midc-sidco" element={<MidcSidcoServices />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
