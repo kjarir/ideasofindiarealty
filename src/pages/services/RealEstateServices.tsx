@@ -1,12 +1,14 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { MapPin } from "lucide-react";
+import realEstateImage from "@/assets/real-estate-services.jpg";
 
 const RealEstateServices = () => {
   const serviceData = {
     title: "Real Estate & Development Approvals",
     description: "Comprehensive real estate development approvals and project clearances. When others say 'not possible,' we say, 'consider it done — the right way.'",
     icon: MapPin,
+    image: realEstateImage,
     services: [
       {
         category: "Development Approvals",

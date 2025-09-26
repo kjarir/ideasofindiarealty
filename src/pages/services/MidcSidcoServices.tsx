@@ -1,12 +1,14 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { Factory } from "lucide-react";
+import midcImage from "@/assets/midc-sidco-services.jpg";
 
 const MidcSidcoServices = () => {
   const serviceData = {
     title: "MIDC & SIDCO Services",
     description: "Industrial development approvals and SIDCO clearances with expert knowledge. Approvals don't come by chance; they come through deep understanding and relentless follow-up.",
     icon: Factory,
+    image: midcImage,
     services: [
       {
         category: "MIDC & SIDCO Support",

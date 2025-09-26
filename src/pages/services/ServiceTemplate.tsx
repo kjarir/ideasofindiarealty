@@ -10,6 +10,7 @@ interface ServiceTemplateProps {
   title: string;
   description: string;
   icon: LucideIcon;
+  image?: string;
   services: Array<{
     category: string;
     items: string[];
@@ -22,12 +23,25 @@ interface ServiceTemplateProps {
   }>;
 }
 
-const ServiceTemplate = ({ title, description, icon, services, benefits, process }: ServiceTemplateProps) => {
+const ServiceTemplate = ({ title, description, icon, image, services, benefits, process }: ServiceTemplateProps) => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-16 lg:py-24 bg-hero-gradient text-white">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-16 lg:py-24 text-white overflow-hidden">
+        {/* Background Image */}
+        {image && (
+          <div className="absolute inset-0">
+            <img 
+              src={image} 
+              alt={title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-hero-gradient opacity-90"></div>
+          </div>
+        )}
+        {!image && <div className="absolute inset-0 bg-hero-gradient"></div>}
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
               {React.createElement(icon, { className: "w-10 h-10 text-white" })}
