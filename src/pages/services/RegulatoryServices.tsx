@@ -4,63 +4,26 @@ import { Shield } from "lucide-react";
 
 const RegulatoryServices = () => {
   const serviceData = {
-    title: "Regulatory & Advisory",
-    description: "Expert consultation and regulatory guidance for complex compliance requirements across multiple industries and government departments.",
+    title: "Other Regulatory & Advisory Services",
+    description: "Expert legal consultation and regulatory guidance. Trust isn't something we claim — it's something we've earned through deep knowledge and clear processes.",
     icon: Shield,
     services: [
       {
-        category: "Legal Consultation",
+        category: "Legal & Compliance",
         items: [
-          "Regulatory Compliance Advisory",
-          "Legal Risk Assessment",
-          "Policy Interpretation Services",
-          "Regulatory Framework Analysis",
-          "Compliance Gap Analysis",
-          "Legal Documentation Review"
+          "Affidavits & Notarization Support",
+          "Drafting of Agreements & Deeds",
+          "Title Search & Due Diligence",
+          "Revenue Litigation Support"
         ]
       },
       {
-        category: "Regulatory Guidance",
+        category: "Consultancy & Project Advisory",
         items: [
-          "Government Policy Navigation",
-          "Regulatory Change Management",
-          "Compliance Strategy Development",
-          "Regulatory Filing Assistance",
-          "Government Liaison Services",
-          "Policy Impact Assessment"
-        ]
-      },
-      {
-        category: "Compliance Strategy",
-        items: [
-          "Multi-Jurisdictional Compliance",
-          "Regulatory Roadmap Development",
-          "Compliance Monitoring Systems",
-          "Risk Mitigation Strategies",
-          "Regulatory Training Programs",
-          "Compliance Audit Support"
-        ]
-      },
-      {
-        category: "Industry-Specific Advisory",
-        items: [
-          "Real Estate Regulatory Compliance",
-          "Manufacturing Industry Guidelines",
-          "Service Sector Regulations",
-          "Import-Export Compliance",
-          "Environmental Regulatory Advisory",
-          "Labor Law Compliance"
-        ]
-      },
-      {
-        category: "Government Relations",
-        items: [
-          "Government Stakeholder Management",
-          "Policy Advocacy Support",
-          "Regulatory Representation",
-          "Government Communication Strategy",
-          "Public Affairs Management",
-          "Regulatory Intelligence Services"
+          "End-to-End Project Consulting",
+          "Feasibility Reports & Project Reports",
+          "Representation with Govt Bodies",
+          "File Monitoring & Fast-Tracking"
         ]
       }
     ]

@@ -4,51 +4,35 @@ import { FileText } from "lucide-react";
 const BusinessLicensing = () => {
   const services = [
     {
-      title: "Business Registration",
-      description: "Complete business entity registration and incorporation services",
+      title: "Business & Trade Licenses",
+      description: "Complete business licensing and establishment permits",
       items: [
-        "Private Limited Company registration",
-        "LLP (Limited Liability Partnership) formation",
-        "Partnership firm registration",
-        "Sole proprietorship establishment",
-        "Section 8 company incorporation",
-        "Producer company registration"
+        "Shop & Establishment License",
+        "Trade License / Eating House License",
+        "Health Trade License",
+        "Factory License",
+        "Food & Drug License (FDA)",
+        "FSSAI License"
       ]
     },
     {
-      title: "Trade Licenses & Permits",
-      description: "Essential trade licenses and permits for business operations",
+      title: "Business Registrations",
+      description: "Comprehensive business registration and recognition services",
       items: [
-        "Shop and establishment licenses",
-        "Trade licenses from local authorities",
-        "Manufacturing licenses",
-        "Food business operator licenses",
-        "Professional tax registration",
-        "Labor law compliance certificates"
+        "MSME / Udyam Registration",
+        "Startup India / DPIIT Recognition",
+        "Professional Tax (PTEC / PTRC) Registration",
+        "Labour Welfare Fund Compliance"
       ]
     },
     {
-      title: "Tax Registrations",
-      description: "Comprehensive tax registration and compliance services",
+      title: "Company & GST Setup",
+      description: "Complete company formation and tax compliance setup",
       items: [
-        "GST registration and returns",
-        "Income tax registrations",
-        "TDS return filing",
-        "Professional tax registration",
-        "Export-import code (IEC)",
-        "MSME registration and benefits"
-      ]
-    },
-    {
-      title: "Ongoing Compliance",
-      description: "Continuous compliance management and regulatory updates",
-      items: [
-        "Annual return filing",
-        "Board resolution drafting",
-        "Compliance calendar management",
-        "Regulatory change notifications",
-        "Audit and assessment support",
-        "Legal notice responses"
+        "Company / LLP / Partnership Registration",
+        "GST Registration & Filing Support",
+        "Import Export Code (IEC) Registration",
+        "Barcode / BIS / ISI Licensing"
       ]
     }
   ];
@@ -93,7 +77,7 @@ const BusinessLicensing = () => {
   return (
     <ServiceTemplate
       title="Business Licensing & Compliance"
-      description="Comprehensive business registration, licensing, and ongoing compliance management. We handle all aspects of your business setup and regulatory requirements."
+      description="Comprehensive business registration, licensing, and compliance management. While others chase volume, we focus on quality — building long-term trust with clients and earning respect from departments."
       icon={FileText}
       services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}

@@ -5,62 +5,20 @@ import { Factory } from "lucide-react";
 const MidcSidcoServices = () => {
   const serviceData = {
     title: "MIDC & SIDCO Services",
-    description: "Industrial development approvals and SIDCO-related clearances for manufacturing units, industrial parks, and development projects.",
+    description: "Industrial development approvals and SIDCO clearances with expert knowledge. Approvals don't come by chance; they come through deep understanding and relentless follow-up.",
     icon: Factory,
     services: [
       {
-        category: "MIDC Industrial Approvals",
+        category: "MIDC & SIDCO Support",
         items: [
-          "MIDC Plot Allotment Applications",
-          "Industrial License Processing",
-          "Manufacturing Unit Approvals",
-          "Industrial Park Development",
-          "MIDC NOC Applications",
-          "Infrastructure Development Clearances"
-        ]
-      },
-      {
-        category: "SIDCO Clearances",
-        items: [
-          "SIDCO Project Approvals",
-          "Small Scale Industry Registration",
-          "Industrial Estate Applications",
-          "SIDCO Land Allotment",
-          "Technology Transfer Approvals",
-          "Export Promotion Clearances"
-        ]
-      },
-      {
-        category: "Development Services",
-        items: [
-          "Industrial Infrastructure Planning",
-          "Utility Connection Facilitation",
-          "Road & Transport Clearances",
-          "Power Connection Approvals",
-          "Water Supply Arrangements",
-          "Waste Management Clearances"
-        ]
-      },
-      {
-        category: "Manufacturing Compliance",
-        items: [
-          "Factory License Applications",
-          "Manufacturing Standards Compliance",
-          "Quality Control Certifications",
-          "Safety Compliance Management",
-          "Environmental Clearance Coordination",
-          "Labor Compliance Documentation"
-        ]
-      },
-      {
-        category: "Industrial Investment Support",
-        items: [
-          "Investment Incentive Applications",
-          "Subsidy Claim Processing",
-          "Industrial Promotion Scheme Benefits",
-          "Tax Exemption Applications",
-          "Financial Assistance Coordination",
-          "Export Promotion Support"
+          "MIDC Plot Allotment Assistance",
+          "MIDC Lease Renewal & Conversion",
+          "MIDC File Submission & Services",
+          "MIDC NOCs for Construction & Usage",
+          "SIDCO Land / Plot Support",
+          "SIDCO Registration / Transfer Help",
+          "Industrial Approval Support through MIDC/SIDCO",
+          "Government Scheme Assistance for Industrial Units"
         ]
       }
     ]

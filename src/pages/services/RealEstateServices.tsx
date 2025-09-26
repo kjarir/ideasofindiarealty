@@ -4,63 +4,28 @@ import { MapPin } from "lucide-react";
 
 const RealEstateServices = () => {
   const serviceData = {
-    title: "Real Estate & Development",
-    description: "Comprehensive real estate approvals and development project clearances for seamless property transactions and development projects.",
+    title: "Real Estate & Development Approvals",
+    description: "Comprehensive real estate development approvals and project clearances. When others say 'not possible,' we say, 'consider it done — the right way.'",
     icon: MapPin,
     services: [
       {
-        category: "RERA Registration & Compliance",
-        items: [
-          "RERA Project Registration",
-          "RERA Agent Registration", 
-          "RERA Compliance Management",
-          "RERA Renewal Applications",
-          "RERA Form Submissions",
-          "Legal Documentation Support"
-        ]
-      },
-      {
         category: "Development Approvals",
         items: [
-          "Development Permission Applications",
-          "Layout Approval Processes",
-          "Construction Clearances",
-          "Occupancy Certificate Processing",
-          "Building Plan Approvals",
-          "Structural Stability Certificates"
+          "DP Remarks & Zone Certificate",
+          "Building Plan Sanctioning",
+          "TDR (Transfer of Development Rights) Support",
+          "Premium FSI & Fungible FSI Approvals",
+          "ULC Clearance"
         ]
       },
       {
-        category: "Project Clearances",
+        category: "Project Registration & NOCs",
         items: [
+          "RERA Registration Support",
           "Environmental Clearance Coordination",
-          "Fire NOC Applications",
-          "Water Connection Approvals",
-          "Electricity Connection Clearances",
-          "Sewage Treatment Approvals",
-          "Parking Permission Documentation"
-        ]
-      },
-      {
-        category: "Real Estate Documentation",
-        items: [
-          "Title Verification Services",
-          "Property Registration Support",
-          "Sale Deed Preparation",
-          "Property Tax Assessments",
-          "Mutation Applications",
-          "Property Valuation Coordination"
-        ]
-      },
-      {
-        category: "Investment & Advisory",
-        items: [
-          "Real Estate Investment Guidance",
-          "Market Analysis Reports",
-          "Due Diligence Services",
-          "Legal Risk Assessment",
-          "Regulatory Compliance Advisory",
-          "Property Portfolio Management"
+          "Airport / Defense NOC",
+          "Fire NOC",
+          "Lift License & NOC"
         ]
       }
     ]

@@ -4,51 +4,24 @@ import { Home } from "lucide-react";
 const MhadaSraServices = () => {
   const services = [
     {
-      title: "MHADA Approvals & Services",
-      description: "Complete MHADA-related approvals and housing authority services",
+      title: "MHADA Project Services",
+      description: "Complete MHADA land allotment and project approval services",
       items: [
-        "MHADA layout approvals",
-        "Housing society registrations",
-        "MHADA loan applications",
-        "Affordable housing scheme applications",
-        "MHADA property transfers",
-        "Housing subsidy claim processing"
+        "MHADA Land Allotment & Approvals",
+        "MHADA NOC for Redevelopment",
+        "Consent & Documentation Handling",
+        "Coordination with MHADA Officers"
       ]
     },
     {
-      title: "SRA (Slum Rehabilitation) Services",
-      description: "Comprehensive SRA project approvals and rehabilitation services",
+      title: "Slum Rehabilitation Authority (SRA)",
+      description: "Comprehensive SRA project coordination and compliance services",
       items: [
-        "SRA project proposals and approvals",
-        "Slum survey and documentation",
-        "Rehabilitation scheme applications",
-        "SRA building plan approvals",
-        "Beneficiary enrollment and verification",
-        "Consent collection and documentation"
-      ]
-    },
-    {
-      title: "Redevelopment Services",
-      description: "Complete redevelopment project management and approvals",
-      items: [
-        "Redevelopment project planning",
-        "Society resolution documentation",
-        "Developer agreement facilitation",
-        "RERA registration for redevelopment",
-        "Municipal approvals for redevelopment",
-        "Environmental clearances"
-      ]
-    },
-    {
-      title: "Housing Compliance & Documentation",
-      description: "Ongoing compliance and documentation services for housing projects",
-      items: [
-        "Society bylaw amendments",
-        "Occupancy certificate processing",
-        "Housing society audit compliance",
-        "Property title verifications",
-        "Housing finance documentation",
-        "Legal compliance for housing projects"
+        "Slum Survey Coordination",
+        "Annexure-II Certification",
+        "SRA Project Proposal Filing",
+        "Tenant Consent & Verification",
+        "Follow-ups with SRA Authority"
       ]
     }
   ];
@@ -93,7 +66,7 @@ const MhadaSraServices = () => {
   return (
     <ServiceTemplate
       title="MHADA & SRA Services"
-      description="Expert assistance with MHADA approvals, SRA clearances, and comprehensive redevelopment services for housing projects."
+      description="Expert MHADA and SRA services with deep knowledge and relentless follow-up. Approvals don't come by chance; they come through understanding the system and building trust with authorities."
       icon={Home}
       services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}

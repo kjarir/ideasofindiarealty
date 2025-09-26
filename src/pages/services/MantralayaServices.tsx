@@ -4,51 +4,68 @@ import { Landmark } from "lucide-react";
 const MantralayaServices = () => {
   const services = [
     {
-      title: "Revenue Documentation",
-      description: "Complete revenue-related document processing and certification",
+      title: "Mantralaya Services & File Processing",
+      description: "Complete file submission and processing at Mantralaya with secretarial coordination",
       items: [
-        "Property cards and revenue records",
-        "Survey settlement records",
-        "Mutation entries and corrections",
-        "Revenue court case documents",
-        "Village revenue records",
-        "Tehsildar office documentation"
+        "File Submission & Processing at Mantralaya",
+        "Services with IAS/IPS/Secretarial Officers",
+        "Coordination with Urban Development, Housing, Revenue Departments",
+        "Getting GOs (Government Orders) Passed",
+        "Representations in CM Cell / Ministerial Offices",
+        "Clearance from Town Planning Department",
+        "File Follow-up & Speed-up at Secretarial Level",
+        "Mantralaya Project Approval Consulting",
+        "VIP Office Services for File Movement",
+        "All Work from General Administration to Housing",
+        "RTI Filing through Mantralaya Departments",
+        "Resolving Stuck Files / Delay in Clearance",
+        "Work Related to Special Permissions / Regularization"
       ]
     },
     {
-      title: "State Government Approvals",
-      description: "High-level state government clearances and permissions",
+      title: "Government Orders, Notifications & Compliance",
+      description: "Drafting and processing of government orders with compliance support",
       items: [
-        "Secretariat level approvals",
-        "Chief Minister's office clearances",
-        "Cabinet committee permissions",
-        "Inter-departmental approvals",
-        "Policy-level clearances",
-        "State board permissions"
+        "Drafting & Issuance of Government Orders (GOs)",
+        "Objection Filing / Hearing Coordination",
+        "Final Notification Coordination",
+        "Compliance Filing for Revenue GOs",
+        "File Movement in Revenue Secretary's Office"
       ]
     },
     {
-      title: "NOCs and Clearances",
-      description: "No Objection Certificates from various state departments",
+      title: "Land & Property Records",
+      description: "Comprehensive land record management and property documentation",
       items: [
-        "Environmental clearances",
-        "Forest department NOCs",
-        "Water resources clearances",
-        "Police department NOCs",
-        "Fire safety clearances",
-        "Archaeological department approvals"
+        "7/12 Extract (Satbara) Corrections & Updates",
+        "Mutation Entries (Ferfar) / Property Transfer",
+        "Name Change in Land Records",
+        "Heirship Certificate Processing",
+        "Certified Copies of Land Records",
+        "Historical Land Record Retrieval",
+        "Khatedar Certificate & Landholder Proofs",
+        "Land Ceiling, Holding & Redistribution Matters"
       ]
     },
     {
-      title: "Land and Revenue Services",
-      description: "Comprehensive land and revenue-related services",
+      title: "Land Conversion, Acquisition & Allotment",
+      description: "Complete land conversion and acquisition services with government coordination",
       items: [
-        "Land acquisition procedures",
-        "Compensation claim processing",
-        "Revenue recovery matters",
-        "Land use change applications",
-        "Revenue survey corrections",
-        "Boundary dispute resolutions"
+        "Land Conversion (Agricultural to Non-Agricultural)",
+        "Government Land Lease / Allotment",
+        "Land Allotment under Government Schemes",
+        "Acquisition Proposal Filing & Follow-up",
+        "Sanctioning of Land for Public/Private Use",
+        "Encroachment Clearance & Demarcation"
+      ]
+    },
+    {
+      title: "Zoning, Legal & Regularization",
+      description: "Property zoning and legal regularization services with dispute resolution",
+      items: [
+        "Zone Certificate & Property Zoning Clearance",
+        "Land Regularization Support",
+        "Dispute Resolution (Tehsildar / SDO / Collector Office)"
       ]
     }
   ];
@@ -93,7 +110,7 @@ const MantralayaServices = () => {
   return (
     <ServiceTemplate
       title="Mantralaya & Revenue Department Services"
-      description="Navigate complex state-level approvals and revenue documentation with our expert assistance. We ensure compliance with all Mantralaya procedures and revenue department requirements."
+      description="Navigate complex state-level approvals and revenue documentation with deep expertise. We don't believe in shortcuts — we earn results through knowledge, process, and relentless follow-up at Mantralaya."
       icon={Landmark}
       services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}

@@ -4,51 +4,33 @@ import { Building } from "lucide-react";
 const MunicipalServices = () => {
   const services = [
     {
-      title: "Building Permissions & NOCs",
-      description: "Complete building approval and clearance services from municipal corporations",
+      title: "BMC Building & Property Approvals",
+      description: "Complete BMC building approvals and property compliance services",
       items: [
-        "Building plan approvals",
-        "Construction permits and licenses",
-        "Occupancy certificates",
-        "Building completion certificates",
-        "Structural safety certificates",
-        "Fire safety NOCs"
+        "BMC Building Proposal Approval",
+        "IOD (Intimation of Disapproval) / CC (Commencement Certificate)",
+        "OC (Occupation Certificate) & Completion Certificate",
+        "Property Tax Mutation & Assessment"
       ]
     },
     {
-      title: "Municipal Licenses",
-      description: "Various licenses and permits required from local municipal authorities",
+      title: "BMC Licensing & Permits",
+      description: "Essential BMC licenses and permits for business operations",
       items: [
-        "Trade licenses for commercial establishments",
-        "Hawking and vending licenses",
-        "Advertising and signage permits",
-        "Event and celebration permits",
-        "Parking space allotments",
-        "Public space usage permits"
+        "Shops & Establishment License",
+        "Health License / Food License",
+        "Factory License",
+        "Trade License Renewals & Modifications"
       ]
     },
     {
-      title: "Property & Development Services",
-      description: "Municipal services related to property development and approvals",
+      title: "Property & Development",
+      description: "BMC property development and zoning services",
       items: [
-        "Property tax assessments and appeals",
-        "Development permission certificates",
-        "Layout plan approvals",
-        "Road cutting permissions",
-        "Drainage connection approvals",
-        "Water and sewerage connections"
-      ]
-    },
-    {
-      title: "Compliance & Clearances",
-      description: "Ongoing compliance and clearance services with municipal authorities",
-      items: [
-        "Health department clearances",
-        "Environmental compliance certificates",
-        "Waste management approvals",
-        "Public health clearances",
-        "Pollution control clearances",
-        "Municipal tax compliance"
+        "DP Remarks & Zone Certificates",
+        "Property Demarcation & Subdivision",
+        "Change of Land Use (CLU)",
+        "Drainage / Sewerage NOCs"
       ]
     }
   ];
@@ -93,7 +75,7 @@ const MunicipalServices = () => {
   return (
     <ServiceTemplate
       title="BMC/Municipal Corporation Services"
-      description="Navigate municipal approvals, building permissions, and local body clearances with our comprehensive municipal services expertise."
+      description="Navigate BMC/Municipal approvals with deep knowledge and clear process. Trust isn't something we claim — it's something we've earned by quietly delivering results, again and again."
       icon={Building}
       services={services.map(service => ({ category: service.title, items: service.items }))}
       benefits={benefits}
