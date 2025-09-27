@@ -19,8 +19,12 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                I
+              <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm">
+                <img 
+                  src="/logo.jpg" 
+                  alt="Ideas of India Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <div className="font-bold text-lg">Ideas of India Realty</div>
@@ -34,15 +38,16 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4" />
-                <span>+91 12345 67890</span>
+                <span>+91 9819013866</span>
+                <span>+91 9372840699</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <span>info@ideasofindiaReality.com</span>
+                <span>ideasofindia786@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4" />
-                <span>Mumbai, Maharashtra</span>
+                <span>Office No. 2, Ground Floor, Court Royal Building, Christ Church Lane (Clare Road), Mirza Ghalib Marg, Mumbai-400008</span>
               </div>
             </div>
           </div>
@@ -73,6 +78,12 @@ const Footer = () => {
                 className="block text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 Home
+              </Link>
+              <Link 
+                to="/services" 
+                className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+              >
+                Services
               </Link>
               <Link 
                 to="/about" 
@@ -106,7 +117,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 Ideas of India Realty. All rights reserved.
+              © 2025 Ideas of India Realty. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               We don't believe in shortcuts - Quality is our commitment.

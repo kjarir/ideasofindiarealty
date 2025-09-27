@@ -51,8 +51,12 @@ const Header = () => {
             className="flex items-center space-x-3 group"
             onClick={() => setIsMenuOpen(false)}
           >
-            <div className="w-10 h-10 bg-hero-gradient rounded-lg flex items-center justify-center text-white font-bold text-lg">
-              I
+            <div className="w-12 h-12 rounded-lg overflow-hidden shadow-sm">
+              <img 
+                src="/logo.jpg" 
+                alt="Ideas of India Logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="hidden sm:block">
               <div className="font-bold text-lg text-foreground">Ideas of India Realty</div>
@@ -89,6 +93,15 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            <Link 
+              to="/services" 
+              className={`font-medium transition-colors hover:text-primary ${
+                isActive("/services") ? "text-primary" : "text-foreground"
+              }`}
+            >
+              Services
+            </Link>
 
             <Link 
               to="/about" 
@@ -149,6 +162,14 @@ const Header = () => {
                   ))}
                 </div>
               </div>
+
+              <Link 
+                to="/services" 
+                className="block px-4 py-2 font-medium hover:bg-accent transition-colors rounded-md"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
 
               <Link 
                 to="/about" 
