@@ -27,11 +27,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    /* Professional blue color scheme */
-    --primary: 215 70% 45%;
+    /* Professional golden color scheme */
+    --primary: 45 85% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 215 70% 35%;
-    --primary-light: 215 70% 95%;
+    --primary-hover: 45 85% 45%;
+    --primary-light: 45 85% 95%;
 
     --secondary: 220 10% 96%;
     --secondary-foreground: 220 15% 25%;
@@ -39,20 +39,20 @@ All colors MUST be HSL.
     --muted: 220 10% 96%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 215 70% 95%;
-    --accent-foreground: 215 70% 25%;
+    --accent: 45 85% 95%;
+    --accent-foreground: 45 85% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 215 70% 45%;
+    --ring: 45 85% 55%;
 
     /* Custom design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(215 70% 45%), hsl(215 70% 55%));
+    --hero-gradient: linear-gradient(135deg, hsl(45 85% 55%), hsl(45 85% 65%));
     --section-gradient: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 10% 98%));
-    --shadow-elegant: 0 10px 40px -15px hsl(215 70% 45% / 0.2);
+    --shadow-elegant: 0 10px 40px -15px hsl(45 85% 55% / 0.2);
     --shadow-card: 0 4px 20px -5px hsl(220 13% 91% / 0.3);
     
     /* Animation tokens */
@@ -75,7 +75,7 @@ All colors MUST be HSL.
 
     --sidebar-border: 220 13% 91%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 45 85% 55%;
   }
 
   .dark {
@@ -113,7 +113,7 @@ All colors MUST be HSL.
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 45 85% 55%;
   }
 }
 
