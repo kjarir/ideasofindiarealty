@@ -23,7 +23,7 @@ const Footer = () => {
                 I
               </div>
               <div>
-                <div className="font-bold text-lg">Ideas of India Reality</div>
+                <div className="font-bold text-lg">Ideas of India Realty</div>
                 <div className="text-sm text-muted-foreground">Professional Services</div>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Footer = () => {
         <div className="border-t border-border mt-8 pt-6">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 Ideas of India Reality. All rights reserved.
+              © 2024 Ideas of India Realty. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               We don't believe in shortcuts - Quality is our commitment.

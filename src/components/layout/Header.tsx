@@ -55,7 +55,7 @@ const Header = () => {
               I
             </div>
             <div className="hidden sm:block">
-              <div className="font-bold text-lg text-foreground">Ideas of India Reality</div>
+              <div className="font-bold text-lg text-foreground">Ideas of India Realty</div>
               <div className="text-xs text-muted-foreground">Professional Services</div>
             </div>
           </Link>

@@ -36,7 +36,7 @@ const WhatsAppChat = () => {
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold">Ideas of India Reality</h3>
+                <h3 className="font-semibold">Ideas of India Realty</h3>
                 <p className="text-sm text-muted-foreground">We're here to help!</p>
               </div>
             </div>

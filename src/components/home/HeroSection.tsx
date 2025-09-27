@@ -2,6 +2,8 @@ import { ArrowRight, Shield, CheckCircle, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-government-services.jpg";
+import { LazyMotion, domAnimation, m } from "framer-motion";
+import AnimatedText from "@/components/common/AnimatedText";
 
 const HeroSection = () => {
   return (
@@ -26,31 +28,62 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in">
-            Professional Government
-            <br />
-            <span className="text-primary-light">Services & Compliance</span>
-          </h1>
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <AnimatedText as="span">Professional Government</AnimatedText>
+                <br />
+                <AnimatedText as="span" className="text-primary-light" delay={0.2}>
+                  Services & Compliance
+                </AnimatedText>
+              </h1>
+            </m.div>
+          </LazyMotion>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-up">
-            We provide comprehensive regulatory solutions and government services 
-            with unwavering commitment to quality, trust, and reliability.
-          </p>
+          <LazyMotion features={domAnimation} strict>
+            <m.p
+              className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            >
+              We provide comprehensive regulatory solutions and government services 
+              with unwavering commitment to quality, trust, and reliability.
+            </m.p>
+          </LazyMotion>
 
           {/* Philosophy Quote */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white/20 animate-scale-in">
-            <p className="text-lg italic text-white/95 mb-2">
-              "We don't believe in shortcuts..."
-            </p>
-            <p className="text-white/80">
-              Quality, integrity, and client success are the foundation of everything we do.
-            </p>
-          </div>
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8 border border-white/20"
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              <p className="text-lg italic text-white/95 mb-2">
+                "We don't believe in shortcuts..."
+              </p>
+              <p className="text-white/80">
+                Quality, integrity, and client success are the foundation of everything we do.
+              </p>
+            </m.div>
+          </LazyMotion>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
-            <Button 
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: "easeOut" }}
+            >
+              <Button 
               asChild
               size="lg" 
               variant="secondary"
@@ -62,7 +95,7 @@ const HeroSection = () => {
               </Link>
             </Button>
             
-            <Button 
+              <Button 
               asChild
               size="lg" 
               variant="outline"
@@ -72,34 +105,60 @@ const HeroSection = () => {
                 Explore Services
               </Link>
             </Button>
-          </div>
+            </m.div>
+          </LazyMotion>
 
           {/* Trust Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto animate-slide-up">
-            <div className="flex flex-col items-center text-center">
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.4 }}
+              variants={{
+                hidden: {},
+                show: {
+                  transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+                },
+              }}
+            >
+              <m.div
+                className="flex flex-col items-center text-center"
+                variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <Shield className="w-6 h-6" />
               </div>
               <h3 className="font-semibold mb-1">100% Compliant</h3>
               <p className="text-sm text-white/80">Full regulatory compliance guaranteed</p>
-            </div>
+              </m.div>
 
-            <div className="flex flex-col items-center text-center">
+              <m.div
+                className="flex flex-col items-center text-center"
+                variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <CheckCircle className="w-6 h-6" />
               </div>
               <h3 className="font-semibold mb-1">Proven Results</h3>
               <p className="text-sm text-white/80">Thousands of successful applications</p>
-            </div>
+              </m.div>
 
-            <div className="flex flex-col items-center text-center">
+              <m.div
+                className="flex flex-col items-center text-center"
+                variants={{ hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="font-semibold mb-1">Expert Team</h3>
               <p className="text-sm text-white/80">Experienced professionals at your service</p>
-            </div>
-          </div>
+              </m.div>
+            </m.div>
+          </LazyMotion>
         </div>
       </div>
 

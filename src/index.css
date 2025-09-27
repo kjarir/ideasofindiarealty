@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reduce motion support: keep animations subtle for users preferring reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

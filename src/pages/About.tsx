@@ -33,7 +33,7 @@ const About = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
-              About Ideas of India Reality
+              About Ideas of India Realty
             </h1>
             <p className="text-lg lg:text-xl text-white/90 animate-slide-up">
               Your trusted partner for comprehensive government services and regulatory compliance
@@ -53,7 +53,7 @@ const About = () => {
                   "We don't believe in shortcuts..."
                 </blockquote>
                 <p className="text-lg text-muted-foreground">
-                  At Ideas of India Reality, we understand that government processes and regulatory 
+                  At Ideas of India Realty, we understand that government processes and regulatory 
                   compliance require precision, patience, and expertise. We don't cut corners or 
                   promise unrealistic timelines. Instead, we focus on delivering quality results 
                   that stand the test of time and regulatory scrutiny.
@@ -147,7 +147,7 @@ const About = () => {
               </div>
             </div>
             <p className="text-lg text-muted-foreground">
-              When you work with Ideas of India Reality, you're not just hiring a service provider – 
+              When you work with Ideas of India Realty, you're not just hiring a service provider – 
               you're partnering with a team that genuinely cares about your success and will go the 
               extra mile to ensure your complete satisfaction.
             </p>
