@@ -1,15 +1,12 @@
 import React, { ReactNode } from "react";
-import { LucideIcon } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Clock, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ServiceTemplateProps {
   title: string;
   description: string;
-  icon: LucideIcon;
   image?: string;
   services: Array<{
     category: string;
@@ -23,7 +20,7 @@ interface ServiceTemplateProps {
   }>;
 }
 
-const ServiceTemplate = ({ title, description, icon, image, services, benefits, process }: ServiceTemplateProps) => {
+const ServiceTemplate = ({ title, description, image, services, benefits, process }: ServiceTemplateProps) => {
   return (
     <Layout>
       {/* Hero Section */}
@@ -43,9 +40,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
-              {React.createElement(icon, { className: "w-10 h-10 text-white" })}
-            </div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
               {title}
             </h1>
@@ -71,9 +65,8 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
                   <CardContent>
                     <ul className="space-y-2">
                       {service.items.map((item, idx) => (
-                        <li key={idx} className="flex items-start space-x-2 text-sm">
-                          <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span>{item}</span>
+                        <li key={idx} className="text-sm">
+                          {item}
                         </li>
                       ))}
                     </ul>
@@ -96,9 +89,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
                 {benefits.map((benefit, index) => (
                   <Card key={index} className="text-center shadow-card border-0 hover-lift">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="w-6 h-6 text-primary" />
-                      </div>
                       <p className="font-medium">{benefit}</p>
                     </CardContent>
                   </Card>
@@ -108,9 +98,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-primary" />
-                </div>
                 <h3 className="font-semibold mb-2">Fast Processing</h3>
                 <p className="text-sm text-muted-foreground">
                   Optimized workflows for quickest possible turnaround times
@@ -118,9 +105,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="w-8 h-8 text-primary" />
-                </div>
                 <h3 className="font-semibold mb-2">100% Compliant</h3>
                 <p className="text-sm text-muted-foreground">
                   Full adherence to all regulatory requirements and standards
@@ -128,9 +112,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
               </div>
               
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-light rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-primary" />
-                </div>
                 <h3 className="font-semibold mb-2">Expert Support</h3>
                 <p className="text-sm text-muted-foreground">
                   Dedicated professionals guiding you through every step
@@ -185,7 +166,6 @@ const ServiceTemplate = ({ title, description, icon, image, services, benefits, 
               <Button asChild size="lg" className="hover-lift">
                 <Link to="/contact" className="flex items-center">
                   Schedule Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg">

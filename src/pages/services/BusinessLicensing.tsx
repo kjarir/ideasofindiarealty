@@ -1,15 +1,24 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
-import { FileText } from "lucide-react";
 import businessImage from "@/assets/business-licensing.jpg";
 
 const BusinessLicensing = () => {
   const serviceData = {
     title: "Business Licensing & Compliance",
     description: "Approvals don't come by chance; they come through deep knowledge, a clear process, and relentless follow-up.",
-    icon: FileText,
     image: businessImage,
     services: [
+      {
+        category: "🛡️ Property Protection Experts",
+        items: [
+          "Challenge unlawful government acquisition through legal remedies",
+          "Remove illegal encroachments via due process",
+          "Protect ownership rights and restore possession",
+          "Coordinate with Revenue/Collector/Tehsildar offices for action",
+          "File objections, representations, and appeals as required",
+          "Court litigation support with documentation and follow-up"
+        ]
+      },
       {
         category: "📝 Business & Trade Licenses",
         items: [

@@ -94,14 +94,7 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link 
-              to="/services" 
-              className={`font-medium transition-colors hover:text-primary ${
-                isActive("/services") ? "text-primary" : "text-foreground"
-              }`}
-            >
-              Services
-            </Link>
+            
 
             <Link 
               to="/about" 
@@ -163,13 +156,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <Link 
-                to="/services" 
-                className="block px-4 py-2 font-medium hover:bg-accent transition-colors rounded-md"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
+              
 
               <Link 
                 to="/about" 

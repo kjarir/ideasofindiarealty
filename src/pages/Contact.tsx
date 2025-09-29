@@ -8,9 +8,8 @@ import PremiumHero from "@/components/common/PremiumHero";
 import InteractiveCard from "@/components/common/InteractiveCard";
 import ScrollProgress from "@/components/common/ScrollProgress";
 import FloatingCTA from "@/components/common/FloatingCTA";
-import { useState } from "react";
-import { LazyMotion, domAnimation, m } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useState, useRef } from "react";
+import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -22,9 +21,10 @@ const Contact = () => {
     message: ""
   });
 
-  const { ref: formRef, inView: formInView } = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
+  const formRef = useRef<HTMLDivElement | null>(null);
+  const formInView = useInView(formRef, {
+    amount: 0.2,
+    once: true,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

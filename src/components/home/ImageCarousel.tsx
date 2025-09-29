@@ -7,7 +7,6 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import AnimatedText from "@/components/common/AnimatedText";
 
@@ -23,6 +22,7 @@ import midcImg from "@/assets/midc-sidco-services.jpg";
 const ImageCarousel = () => {
   const [api, setApi] = useState<EmblaCarouselType>();
   const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const carouselData = [
     {
@@ -69,8 +69,23 @@ const ImageCarousel = () => {
     api.on("select", onSelect);
   }, [api, onSelect]);
 
+  // Simple autoplay without external plugin
+  useEffect(() => {
+    if (!api) return;
+    const intervalId = window.setInterval(() => {
+      if (!isPaused) {
+        api.scrollNext();
+      }
+    }, 5000);
+    return () => window.clearInterval(intervalId);
+  }, [api, isPaused]);
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div 
+      className="relative w-full h-screen overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <Carousel
         className="w-full h-full"
         setApi={setApi}
@@ -78,13 +93,6 @@ const ImageCarousel = () => {
           align: "start",
           loop: true,
         }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: true,
-            stopOnMouseEnter: true,
-          })
-        ]}
       >
         <CarouselContent className="-ml-0">
           {carouselData.map((slide, index) => (

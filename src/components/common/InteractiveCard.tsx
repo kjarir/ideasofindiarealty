@@ -1,7 +1,6 @@
-import { useState, ReactNode } from "react";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { useState, ReactNode, useRef } from "react";
+import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useInView } from "react-intersection-observer";
 
 interface InteractiveCardProps {
   title: string;
@@ -23,9 +22,10 @@ const InteractiveCard = ({
   hover3D = true 
 }: InteractiveCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, {
+    amount: 0.1,
+    once: true,
   });
 
   return (

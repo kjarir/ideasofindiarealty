@@ -1,41 +1,32 @@
 import Layout from "@/components/layout/Layout";
-import { CheckCircle, Users, Target, Award } from "lucide-react";
 import PremiumHero from "@/components/common/PremiumHero";
 import InteractiveCard from "@/components/common/InteractiveCard";
 import ScrollProgress from "@/components/common/ScrollProgress";
 import FloatingCTA from "@/components/common/FloatingCTA";
-import { LazyMotion, domAnimation, m } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const About = () => {
-  const { ref: valuesRef, inView: valuesInView } = useInView({
-    threshold: 0.2,
-    triggerOnce: true,
-  });
+  const valuesRef = useRef<HTMLDivElement | null>(null);
+  const valuesInView = useInView(valuesRef, { amount: 0.2, once: true });
 
-  const { ref: statsRef, inView: statsInView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
+  const statsRef = useRef<HTMLDivElement | null>(null);
+  const statsInView = useInView(statsRef, { amount: 0.3, once: true });
 
   const values = [
     {
-      icon: CheckCircle,
       title: "No Shortcuts",
       description: "We believe in doing things right the first time, with meticulous attention to detail and complete regulatory compliance."
     },
     {
-      icon: Users,
       title: "Client-Centric",
       description: "Your success is our priority. We provide personalized service and dedicated support throughout every process."
     },
     {
-      icon: Target,
       title: "Results-Driven",
       description: "With a proven track record of successful applications and satisfied clients, we deliver measurable outcomes."
     },
     {
-      icon: Award,
       title: "Professional Excellence",
       description: "Our team of experts brings years of experience and deep knowledge of regulatory frameworks."
     }
@@ -168,9 +159,7 @@ const About = () => {
                 }
               }}
             >
-              {values.map((value, index) => {
-                const Icon = value.icon;
-                return (
+              {values.map((value, index) => (
                   <m.div
                     key={index}
                     variants={{
@@ -182,14 +171,10 @@ const About = () => {
                     <InteractiveCard
                       title={value.title}
                       description={value.description}
-                      icon={<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Icon className="w-8 h-8 text-primary" />
-                      </div>}
                       className="text-center h-full"
                     />
                   </m.div>
-                );
-              })}
+              ))}
             </m.div>
           </LazyMotion>
         </div>

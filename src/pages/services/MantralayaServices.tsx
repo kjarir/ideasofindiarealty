@@ -1,13 +1,11 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
-import { Landmark } from "lucide-react";
 import mantralayaImage from "@/assets/mantralaya-services.jpg";
 
 const MantralayaServices = () => {
   const serviceData = {
     title: "Core Mantralaya & Revenue Department Services",
     description: "We don't believe in shortcuts or empty promises. Trust isn't something we claim — it's something we've earned by quietly delivering results, again and again.",
-    icon: Landmark,
     image: mantralayaImage,
     services: [
       {
@@ -26,6 +24,17 @@ const MantralayaServices = () => {
           "RTI Filing through Mantralaya Departments",
           "Resolving Stuck Files / Delay in Clearance",
           "Work Related to Special Permissions / Regularization"
+        ]
+      },
+      {
+        category: "🛡️ Property Protection Experts",
+        items: [
+          "Challenge unlawful government acquisition through legal remedies",
+          "Remove illegal encroachments via due process",
+          "Protect ownership rights and restore possession",
+          "Coordinate with Revenue/Collector/Tehsildar offices for action",
+          "File objections, representations, and appeals as required",
+          "Court litigation support with documentation and follow-up"
         ]
       },
       {

@@ -1,6 +1,5 @@
-import { ReactNode } from "react";
-import { LazyMotion, domAnimation, m } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { ReactNode, useRef } from "react";
+import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 import AnimatedText from "./AnimatedText";
 
 interface PremiumHeroProps {
@@ -18,10 +17,8 @@ const PremiumHero = ({
   children, 
   overlay = "from-slate-900/70 via-slate-900/50 to-transparent" 
 }: PremiumHeroProps) => {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  });
+  const ref = useRef<HTMLElement | null>(null);
+  const inView = useInView(ref, { amount: 0.3, once: true });
 
   return (
     <section ref={ref} className="relative min-h-[60vh] flex items-center justify-center text-white overflow-hidden">
