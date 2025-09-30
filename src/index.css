@@ -12,10 +12,7 @@
 	}
 }
 
-/* Hide all Lucide icons globally */
-.lucide {
-	display: none !important;
-}
+/* Lucide icons are now visible - removed global hiding rule */
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.

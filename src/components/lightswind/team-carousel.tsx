@@ -342,17 +342,19 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
           <>
             <motion.button
               onClick={() => paginate(-1)}
-              className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center z-20 transition-all duration-300 hover:scale-110"
+              className="absolute left-2 sm:left-5 top-1/2 transform -translate-y-1/2 bg-yellow-500/90 hover:bg-yellow-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center z-20 transition-all duration-300 hover:scale-110 shadow-lg"
               whileTap={{ scale: 0.9 }}
+              aria-label="Previous team member"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </motion.button>
             <motion.button
               onClick={() => paginate(1)}
-              className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center z-20 transition-all duration-300 hover:scale-110"
+              className="absolute right-2 sm:right-5 top-1/2 transform -translate-y-1/2 bg-yellow-500/90 hover:bg-yellow-600 text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center z-20 transition-all duration-300 hover:scale-110 shadow-lg"
               whileTap={{ scale: 0.9 }}
+              aria-label="Next team member"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </motion.button>
           </>
         )}
@@ -460,7 +462,7 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
 
       {/* Dots Indicator */}
       {showDots && (
-        <div className="flex justify-center gap-3 mt-15 ">
+        <div className="flex justify-center gap-2 sm:gap-3 mt-8 sm:mt-12">
           {members.map((_, index) => (
             <motion.button
               key={index}
@@ -473,17 +475,18 @@ export const TeamCarousel: React.FC<TeamCarouselProps> = ({
                 }
               }}
               className={cn(
-                "w-3 h-3 rounded-full transition-all duration-300",
+                "w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300",
                 index === currentIndex
                   ? "scale-125"
                   : "hover:scale-110"
               )}
               style={{
                 background: index === currentIndex
-                  ? infoTextColor
-                  : `${infoTextColor}40`,
+                  ? infoTextColor || "rgb(43, 96%, 56%)"
+                  : `${infoTextColor || "rgb(43, 96%, 56%)"}40`,
               }}
               whileTap={{ scale: 0.9 }}
+              aria-label={`Go to team member ${index + 1}`}
             />
           ))}
         </div>
