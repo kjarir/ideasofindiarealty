@@ -15,59 +15,53 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LazyMotion, domAnimation, m } from "framer-motion";
 import AnimatedText from "@/components/common/AnimatedText";
+import { BentoSeasonalCards, BentoSeasonalCardProps } from "@/components/common/BentoSeasonalCards";
 
 const ServicesOverview = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const services = [
+  const services: BentoSeasonalCardProps[] = [
     {
       title: "Mantralaya & Revenue Department",
-      description: "State-level approvals, revenue documents, and governmental clearances",
-      icon: Landmark,
-      path: "/services/mantralaya",
-      highlights: ["Revenue Documents", "State Approvals", "NOCs & Clearances"]
+      subtitle: "Government Services",
+      description: "State-level approvals, revenue documents, and governmental clearances with expert guidance",
+      imageSrc: "/src/assets/mantralaya-services.jpg"
     },
     {
       title: "Business Licensing & Compliance",
+      subtitle: "Business Solutions",
       description: "Complete business registration, licensing, and ongoing compliance management",
-      icon: FileText,
-      path: "/services/business-licensing",
-      highlights: ["Business Registration", "Trade Licenses", "Compliance Management"]
+      imageSrc: "/src/assets/business-licensing.jpg"
     },
     {
       title: "BMC/Municipal Corporation",
+      subtitle: "Municipal Services",
       description: "Municipal approvals, building permissions, and local body clearances",
-      icon: Building,
-      path: "/services/municipal",
-      highlights: ["Building Permissions", "Municipal NOCs", "Local Approvals"]
+      imageSrc: "/src/assets/municipal-services.jpg"
     },
     {
       title: "MHADA & SRA Services",
+      subtitle: "Housing Solutions",
       description: "Housing authority approvals, SRA clearances, and redevelopment services",
-      icon: Home,
-      path: "/services/mhada-sra",
-      highlights: ["MHADA Approvals", "SRA Clearances", "Redevelopment"]
+      imageSrc: "/src/assets/mhada-sra-services.jpg"
     },
     {
       title: "Real Estate & Development",
+      subtitle: "Real Estate Services",
       description: "Comprehensive real estate approvals and development project clearances",
-      icon: MapPin,
-      path: "/services/real-estate",
-      highlights: ["RERA Registration", "Development Approvals", "Project Clearances"]
+      imageSrc: "/src/assets/real-estate-services.jpg"
     },
     {
       title: "Regulatory & Advisory",
+      subtitle: "Expert Consultation",
       description: "Expert consultation and regulatory guidance for complex compliance requirements",
-      icon: Shield,
-      path: "/services/regulatory",
-      highlights: ["Legal Consultation", "Regulatory Guidance", "Compliance Strategy"]
+      imageSrc: "/src/assets/regulatory-services.jpg"
     },
     {
       title: "MIDC & SIDCO Services",
+      subtitle: "Industrial Development",
       description: "Industrial development approvals and SIDCO-related clearances",
-      icon: Factory,
-      path: "/services/midc-sidco",
-      highlights: ["Industrial Approvals", "SIDCO Clearances", "Development Services"]
+      imageSrc: "/src/assets/midc-sidco-services.jpg"
     }
   ];
 
@@ -99,66 +93,21 @@ const ServicesOverview = () => {
           </LazyMotion>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Bento Seasonal Cards */}
         <LazyMotion features={domAnimation} strict>
           <m.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-            initial="hidden"
-            whileInView="show"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-12"
           >
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <m.div
-                key={index}
-                variants={{ hidden: { opacity: 0, y: 18, scale: 0.98 }, show: { opacity: 1, y: 0, scale: 1 } }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <Card 
-                  className={`hover-lift shadow-card border-0 transition-all duration-300 ${
-                    hoveredCard === index ? "shadow-elegant scale-105" : ""
-                  }`}
-                  onMouseEnter={() => setHoveredCard(index)}
-                  onMouseLeave={() => setHoveredCard(null)}
-                >
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="w-12 h-12 bg-primary-light rounded-lg flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-muted-foreground" />
-                    </div>
-                    <CardTitle className="text-lg font-semibold">{service.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {service.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="space-y-1 mb-4">
-                      {service.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-muted-foreground">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2"></div>
-                          {highlight}
-                        </div>
-                      ))}
-                    </div>
-                    <Button asChild variant="outline" size="sm" className="w-full">
-                      <Link to={service.path}>
-                        Learn More
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </m.div>
-            );
-          })}
+            <BentoSeasonalCards cards={services} />
           </m.div>
         </LazyMotion>
 
         {/* CTA Section */}
-        <div className="text-center">
+        <div className="text-center mt-16">
           <LazyMotion features={domAnimation} strict>
             <m.div
               className="bg-card rounded-lg p-8 shadow-card border max-w-3xl mx-auto"
