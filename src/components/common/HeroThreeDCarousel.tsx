@@ -186,14 +186,14 @@ const HeroThreeDCarousel = ({
             }
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <span className="text-xl font-bold">‹</span>
           </button>
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-50 z-30 shadow-lg border border-gray-200 transition-all hover:scale-105 hover:shadow-xl"
             onClick={() => setActive((prev) => (prev + 1) % items.length)}
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6" />
+            <span className="text-xl font-bold">›</span>
           </button>
 
           <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center space-x-3 z-30">
