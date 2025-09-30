@@ -44,15 +44,15 @@ const About = () => {
       id: "1",
       name: "Asgar Shamim Ahmed Shaikh",
       role: "Founder & CEO",
-      image: "/asgar-shamim-1.jpg",
+      image: "/WhatsApp Image 2025-09-30 at 10.14.43 PM.jpeg",
       bio: "With over 15 years of experience in government services and regulatory compliance, Asgar leads our team with a vision of simplifying complex bureaucratic processes."
     },
     {
       id: "2",
-      name: "Asgar Shamim Ahmed Shaikh",
-      role: "Founder & CEO",
-      image: "/asgar-shamim-2.jpg",
-      bio: "With over 15 years of experience in government services and regulatory compliance, Asgar leads our team with a vision of simplifying complex bureaucratic processes."
+      name: "Faizan Ansari",
+      role: "Manager",
+      image: "/WhatsApp Image 2025-10-01 at 1.08.26 AM.jpeg",
+      bio: "Faizan brings extensive experience in operations management and client relations, ensuring smooth execution of all our services with attention to detail and customer satisfaction."
     },
     {
       id: "3", 
