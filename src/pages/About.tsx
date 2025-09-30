@@ -3,6 +3,7 @@ import PremiumHero from "@/components/common/PremiumHero";
 import InteractiveCard from "@/components/common/InteractiveCard";
 import ScrollProgress from "@/components/common/ScrollProgress";
 import FloatingCTA from "@/components/common/FloatingCTA";
+import TeamCarousel from "@/components/lightswind/team-carousel";
 import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -36,6 +37,44 @@ const About = () => {
     { value: "1000+", label: "Successful Applications", description: "Across all service categories" },
     { value: "15+", label: "Years of Experience", description: "In government and regulatory services" },
     { value: "100%", label: "Compliance Rate", description: "Zero rejected applications due to errors" }
+  ];
+
+  const teamMembers = [
+    {
+      id: "1",
+      name: "Mohammed Jarir Khan",
+      role: "Founder & CEO",
+      image: "/api/placeholder/400/500",
+      bio: "With over 15 years of experience in government services and regulatory compliance, Mohammed leads our team with a vision of simplifying complex bureaucratic processes."
+    },
+    {
+      id: "2", 
+      name: "Priya Sharma",
+      role: "Legal Advisor",
+      image: "/api/placeholder/400/500",
+      bio: "Specialized in real estate law and regulatory compliance, Priya ensures all our applications meet the highest legal standards."
+    },
+    {
+      id: "3",
+      name: "Rajesh Kumar",
+      role: "Government Relations Manager",
+      image: "/api/placeholder/400/500", 
+      bio: "With deep connections in various government departments, Rajesh facilitates smooth processing of applications and clearances."
+    },
+    {
+      id: "4",
+      name: "Anita Patel",
+      role: "Documentation Specialist",
+      image: "/api/placeholder/400/500",
+      bio: "Anita's meticulous attention to detail ensures every document is prepared to perfection, reducing processing times significantly."
+    },
+    {
+      id: "5",
+      name: "Vikram Singh",
+      role: "Business Development",
+      image: "/api/placeholder/400/500",
+      bio: "Vikram helps businesses understand regulatory requirements and develops customized solutions for their specific needs."
+    }
   ];
 
   return (
@@ -238,6 +277,58 @@ const About = () => {
               </m.p>
             </LazyMotion>
           </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">Meet Our Expert Team</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Our dedicated professionals bring years of experience and specialized knowledge to help you navigate complex government processes with confidence.
+              </p>
+            </m.div>
+          </LazyMotion>
+          
+          <TeamCarousel
+            members={teamMembers}
+            title="OUR TEAM"
+            titleSize="xl"
+            titleColor="rgba(43, 96%, 56%, 0.8)"
+            background="transparent"
+            cardWidth={300}
+            cardHeight={400}
+            cardRadius={20}
+            showArrows={true}
+            showDots={true}
+            keyboardNavigation={true}
+            touchNavigation={true}
+            animationDuration={800}
+            autoPlay={4000}
+            pauseOnHover={true}
+            visibleCards={2}
+            sideCardScale={0.85}
+            sideCardOpacity={0.7}
+            grayscaleEffect={true}
+            infoPosition="bottom"
+            infoTextColor="rgb(43, 96%, 56%)"
+            infoBackground="transparent"
+            onMemberChange={(member, index) => {
+              console.log(`Active member changed to: ${member.name} at index ${index}`);
+            }}
+            onCardClick={(member, index) => {
+              console.log(`Card clicked: ${member.name} at index ${index}`);
+            }}
+            className="min-h-[600px]"
+          />
         </div>
       </section>
     </Layout>
