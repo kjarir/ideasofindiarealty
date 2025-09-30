@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
-import mantralayaImage from "@/assets/mantralaya-services.jpg";
+const mantralayaImage = "/mantralaya-services.jpg";
 
 const MantralayaServices = () => {
   const serviceData = {

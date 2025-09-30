@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { Building } from "lucide-react";
-import municipalImage from "@/assets/municipal-services.jpg";
+const municipalImage = "/municipal-services.jpg";
 
 const MunicipalServices = () => {
   const serviceData = {

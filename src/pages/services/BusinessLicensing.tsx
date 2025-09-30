@@ -1,6 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
-import businessImage from "@/assets/business-licensing.jpg";
+const businessImage = "/business-licensing.jpg";
 
 const BusinessLicensing = () => {
   const serviceData = {

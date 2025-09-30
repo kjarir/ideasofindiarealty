@@ -25,43 +25,43 @@ const ServicesOverview = () => {
       title: "Mantralaya & Revenue Department",
       subtitle: "Government Services",
       description: "State-level approvals, revenue documents, and governmental clearances with expert guidance",
-      imageSrc: "/src/assets/mantralaya-services.jpg"
+      imageSrc: "/mantralaya-services.jpg"
     },
     {
       title: "Business Licensing & Compliance",
       subtitle: "Business Solutions",
       description: "Complete business registration, licensing, and ongoing compliance management",
-      imageSrc: "/src/assets/business-licensing.jpg"
+      imageSrc: "/business-licensing.jpg"
     },
     {
       title: "BMC/Municipal Corporation",
       subtitle: "Municipal Services",
       description: "Municipal approvals, building permissions, and local body clearances",
-      imageSrc: "/src/assets/municipal-services.jpg"
+      imageSrc: "/municipal-services.jpg"
     },
     {
       title: "MHADA & SRA Services",
       subtitle: "Housing Solutions",
       description: "Housing authority approvals, SRA clearances, and redevelopment services",
-      imageSrc: "/src/assets/mhada-sra-services.jpg"
+      imageSrc: "/mhada-sra-services.jpg"
     },
     {
       title: "Real Estate & Development",
       subtitle: "Real Estate Services",
       description: "Comprehensive real estate approvals and development project clearances",
-      imageSrc: "/src/assets/real-estate-services.jpg"
+      imageSrc: "/real-estate-services.jpg"
     },
     {
       title: "Regulatory & Advisory",
       subtitle: "Expert Consultation",
       description: "Expert consultation and regulatory guidance for complex compliance requirements",
-      imageSrc: "/src/assets/regulatory-services.jpg"
+      imageSrc: "/regulatory-services.jpg"
     },
     {
       title: "MIDC & SIDCO Services",
       subtitle: "Industrial Development",
       description: "Industrial development approvals and SIDCO-related clearances",
-      imageSrc: "/src/assets/midc-sidco-services.jpg"
+      imageSrc: "/midc-sidco-services.jpg"
     }
   ];
 

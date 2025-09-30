@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { Shield } from "lucide-react";
-import regulatoryImage from "@/assets/regulatory-services.jpg";
+const regulatoryImage = "/regulatory-services.jpg";
 
 const RegulatoryServices = () => {
   const serviceData = {

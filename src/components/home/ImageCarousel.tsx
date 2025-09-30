@@ -11,13 +11,13 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 import AnimatedText from "@/components/common/AnimatedText";
 
 // Import all service images
-import mantralayaImg from "@/assets/mantralaya-services.jpg";
-import businessImg from "@/assets/business-licensing.jpg";
-import municipalImg from "@/assets/municipal-services.jpg";
-import mhadaImg from "@/assets/mhada-sra-services.jpg";
-import realEstateImg from "@/assets/real-estate-services.jpg";
-import regulatoryImg from "@/assets/regulatory-services.jpg";
-import midcImg from "@/assets/midc-sidco-services.jpg";
+const mantralayaImg = "/mantralaya-services.jpg";
+const businessImg = "/business-licensing.jpg";
+const municipalImg = "/municipal-services.jpg";
+const mhadaImg = "/mhada-sra-services.jpg";
+const realEstateImg = "/real-estate-services.jpg";
+const regulatoryImg = "/regulatory-services.jpg";
+const midcImg = "/midc-sidco-services.jpg";
 
 const ImageCarousel = () => {
   const [api, setApi] = useState<EmblaCarouselType>();

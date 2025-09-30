@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { Factory } from "lucide-react";
-import midcImage from "@/assets/midc-sidco-services.jpg";
+const midcImage = "/midc-sidco-services.jpg";
 
 const MidcSidcoServices = () => {
   const serviceData = {

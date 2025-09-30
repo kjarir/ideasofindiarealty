@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { Home } from "lucide-react";
-import mhadaImage from "@/assets/mhada-sra-services.jpg";
+const mhadaImage = "/mhada-sra-services.jpg";
 
 const MhadaSraServices = () => {
   const serviceData = {

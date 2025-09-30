@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import ServiceTemplate from "./ServiceTemplate";
 import { MapPin } from "lucide-react";
-import realEstateImage from "@/assets/real-estate-services.jpg";
+const realEstateImage = "/real-estate-services.jpg";
 
 const RealEstateServices = () => {
   const serviceData = {
