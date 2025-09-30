@@ -27,18 +27,22 @@ const BentoSeasonalCard = ({
 }: BentoSeasonalCardProps) => {
   const sizeClasses = {
     small: "col-span-1 row-span-1",
-    medium: "col-span-2 row-span-1", 
-    large: "col-span-2 row-span-2",
+    medium: "col-span-1 row-span-1 sm:col-span-1 md:col-span-2 lg:col-span-2", 
+    large: "col-span-2 row-span-2 sm:col-span-2 md:col-span-2 lg:col-span-2",
   };
 
   return (
     <div
       className={cn(
-        "group relative flex flex-col justify-end p-6 bg-black rounded-lg overflow-hidden shadow-lg transition-all duration-500 hover:scale-105",
+        "group relative flex flex-col justify-end p-4 sm:p-6 bg-black rounded-lg overflow-hidden shadow-lg transition-all duration-500 hover:scale-[1.02]",
         sizeClasses[size],
         className
       )}
-      style={{ minHeight: size === 'large' ? '400px' : '250px' }}
+      style={{ 
+        minHeight: size === 'large' 
+          ? 'clamp(300px, 35vw, 400px)' 
+          : 'clamp(200px, 25vw, 250px)' 
+      }}
     >
       <img
         src={imageSrc}
@@ -46,12 +50,12 @@ const BentoSeasonalCard = ({
         alt={imageAlt || title}
       />
       <div className="absolute inset-0 bg-black bg-opacity-60 group-hover:bg-opacity-40 transition-all duration-500"></div>
-      <div className="relative z-10 space-y-2">
-        <h2 className="text-xl font-bold text-white">{title}</h2>
-        <p className="text-sm text-gray-300">{subtitle}</p>
+      <div className="relative z-10 space-y-1 sm:space-y-2">
+        <h2 className="text-lg sm:text-xl font-bold text-white leading-tight">{title}</h2>
+        <p className="text-xs sm:text-sm text-gray-300">{subtitle}</p>
       </div>
-      <div className="mt-4 transform translate-y-6 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-        <p className="text-lg text-white">{description}</p>
+      <div className="mt-2 sm:mt-4 transform translate-y-6 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+        <p className="text-sm sm:text-lg text-white leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -59,7 +63,12 @@ const BentoSeasonalCard = ({
 
 export function BentoSeasonalCards({ cards, className }: BentoSeasonalCardsProps) {
   return (
-    <div className={cn("grid grid-cols-4 gap-4 w-full px-4", className)}>
+    <div className={cn(
+      "grid gap-3 sm:gap-4 w-full", 
+      "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4",
+      "auto-rows-[clamp(200px,25vw,250px)]",
+      className
+    )}>
       {cards.map((card, index) => (
         <BentoSeasonalCard
           key={index}
@@ -68,7 +77,11 @@ export function BentoSeasonalCards({ cards, className }: BentoSeasonalCardsProps
           description={card.description}
           imageSrc={card.imageSrc}
           imageAlt={card.imageAlt}
-          size={index === 0 ? 'large' : index % 3 === 0 ? 'medium' : 'small'}
+          size={
+            index === 0 ? 'large' : 
+            index === 1 || index === 2 ? 'medium' : 
+            'small'
+          }
         />
       ))}
     </div>
