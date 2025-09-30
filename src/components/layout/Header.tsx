@@ -122,32 +122,53 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-accent transition-colors"
+            className="lg:hidden p-2 rounded-md hover:bg-accent transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <>
+            {/* Backdrop */}
+            <div 
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            {/* Menu */}
+            <div className="lg:hidden relative z-50 border-t border-border bg-background/95 backdrop-blur-md shadow-lg">
             <div className="py-4 space-y-2">
               <Link 
                 to="/" 
-                className="block px-4 py-2 font-medium hover:bg-accent transition-colors rounded-md"
+                className={`block px-4 py-3 font-medium transition-colors rounded-md mx-2 ${
+                  isActive("/") 
+                    ? "text-primary bg-primary/10" 
+                    : "text-foreground hover:bg-accent"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               
               <div className="px-4 py-2">
-                <div className="font-medium text-muted-foreground mb-2">Services</div>
+                <div className="font-medium text-muted-foreground mb-2 px-2">Services</div>
                 <div className="space-y-1 ml-4">
                   {serviceCategories.map((category) => (
                     <Link 
                       key={category.path}
                       to={category.path}
-                      className="block py-1 text-sm hover:text-primary transition-colors"
+                      className={`block py-2 px-2 text-sm transition-colors rounded-md ${
+                        isActive(category.path)
+                          ? "text-primary bg-primary/10"
+                          : "text-foreground hover:text-primary hover:bg-accent"
+                      }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {category.title}
@@ -156,11 +177,13 @@ const Header = () => {
                 </div>
               </div>
 
-              
-
               <Link 
                 to="/about" 
-                className="block px-4 py-2 font-medium hover:bg-accent transition-colors rounded-md"
+                className={`block px-4 py-3 font-medium transition-colors rounded-md mx-2 ${
+                  isActive("/about") 
+                    ? "text-primary bg-primary/10" 
+                    : "text-foreground hover:bg-accent"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
@@ -168,19 +191,24 @@ const Header = () => {
 
               <Link 
                 to="/contact" 
-                className="block px-4 py-2 font-medium hover:bg-accent transition-colors rounded-md"
+                className={`block px-4 py-3 font-medium transition-colors rounded-md mx-2 ${
+                  isActive("/contact") 
+                    ? "text-primary bg-primary/10" 
+                    : "text-foreground hover:bg-accent"
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </Link>
 
-              <div className="px-4 pt-2">
-                <Button variant="default" className="w-full">
+              <div className="px-4 pt-4">
+                <Button variant="default" className="w-full hover-lift">
                   Get Started
                 </Button>
               </div>
             </div>
-          </div>
+            </div>
+          </>
         )}
       </div>
     </header>
