@@ -54,7 +54,7 @@ const ImageGridHero = ({ items }: ImageGridHeroProps) => {
                 Comprehensive administrative support for Mantralaya clearances, business licensing, real estate approvals, and regulatory compliance across Maharashtra.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-300">
+                <button className="px-8 py-4 bg-yellow-500 text-white rounded-lg font-semibold hover:bg-yellow-600 transition-colors duration-300">
                   Get Started
                 </button>
                 <button className="px-8 py-4 text-gray-700 font-semibold hover:text-gray-900 transition-colors duration-300">

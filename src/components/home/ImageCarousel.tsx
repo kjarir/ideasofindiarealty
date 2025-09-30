@@ -159,7 +159,7 @@ const ImageCarousel = () => {
                               delay: current === index ? 0.7 : 0 
                             }}
                           >
-                            <button className="px-8 py-4 bg-white text-slate-900 font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 hover:scale-105 shadow-lg">
+                            <button className="px-8 py-4 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 transition-all duration-300 hover:scale-105 shadow-lg">
                               Get Started Today
                             </button>
                             <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-slate-900 transition-all duration-300">
