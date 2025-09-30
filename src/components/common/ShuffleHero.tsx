@@ -1,34 +1,25 @@
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const ShuffleHero = () => {
   return (
-    <LazyMotion features={domAnimation} strict>
-      <section className="w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-6 sm:gap-8 lg:gap-12 max-w-7xl mx-auto">
-        <div className="order-2 lg:order-1">
-          <span className="block mb-3 sm:mb-4 text-xs sm:text-sm text-purple-600 font-medium">
-            Professional Services
-          </span>
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-            Professional Government Services & Regulatory Solutions
-          </h3>
-          <p className="text-sm sm:text-base md:text-lg text-gray-600 my-4 sm:my-6 leading-relaxed">
-            Comprehensive administrative support for Mantralaya clearances, business licensing, real estate approvals, and regulatory compliance across Maharashtra.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button className="bg-purple-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all hover:bg-purple-700 active:scale-95 text-sm sm:text-base">
-              Get Started
-            </button>
-            <button className="text-gray-700 font-semibold py-3 px-6 sm:px-8 rounded-lg border border-gray-300 hover:bg-gray-50 transition-all active:scale-95 text-sm sm:text-base">
-              Learn About Us
-            </button>
-          </div>
-        </div>
-        <div className="order-1 lg:order-2">
-          <ShuffleGrid />
-        </div>
-      </section>
-    </LazyMotion>
+    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+      <div>
+        <span className="block mb-4 text-xs md:text-sm text-purple-600 font-medium">
+          Professional Services
+        </span>
+        <h3 className="text-4xl md:text-6xl font-semibold">
+          Professional Government Services & Regulatory Solutions
+        </h3>
+        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6">
+          Comprehensive administrative support for Mantralaya clearances, business licensing, real estate approvals, and regulatory compliance across Maharashtra.
+        </p>
+        <button className="bg-purple-600 text-white font-medium py-2 px-4 rounded transition-all hover:bg-purple-700 active:scale-95">
+          Get Started
+        </button>
+      </div>
+      <ShuffleGrid />
+    </section>
   );
 };
 
@@ -118,17 +109,16 @@ const squareData = [
 
 const generateSquares = () => {
   return shuffle(squareData).map((sq) => (
-    <m.div
+    <motion.div
       key={sq.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full rounded-sm overflow-hidden"
+      className="w-full h-full"
       style={{
         backgroundImage: `url(${sq.src})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
-    ></m.div>
+    ></motion.div>
   ));
 };
 
@@ -149,7 +139,7 @@ const ShuffleGrid = () => {
   };
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] gap-1 sm:gap-2">
+    <div className="grid grid-cols-4 grid-rows-4 h-[450px] gap-1">
       {squares.map((sq) => sq)}
     </div>
   );
