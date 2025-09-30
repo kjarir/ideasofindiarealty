@@ -42,34 +42,41 @@ const About = () => {
   const teamMembers = [
     {
       id: "1",
-      name: "Mohammed Jarir Khan",
+      name: "Asgar Shamim Ahmed Shaikh",
       role: "Founder & CEO",
-      image: "/api/placeholder/400/500",
-      bio: "With over 15 years of experience in government services and regulatory compliance, Mohammed leads our team with a vision of simplifying complex bureaucratic processes."
+      image: "/asgar-shamim-1.jpg",
+      bio: "With over 15 years of experience in government services and regulatory compliance, Asgar leads our team with a vision of simplifying complex bureaucratic processes."
     },
     {
-      id: "2", 
+      id: "2",
+      name: "Asgar Shamim Ahmed Shaikh",
+      role: "Founder & CEO",
+      image: "/asgar-shamim-2.jpg",
+      bio: "With over 15 years of experience in government services and regulatory compliance, Asgar leads our team with a vision of simplifying complex bureaucratic processes."
+    },
+    {
+      id: "3", 
       name: "Priya Sharma",
       role: "Legal Advisor",
       image: "/api/placeholder/400/500",
       bio: "Specialized in real estate law and regulatory compliance, Priya ensures all our applications meet the highest legal standards."
     },
     {
-      id: "3",
+      id: "4",
       name: "Rajesh Kumar",
       role: "Government Relations Manager",
       image: "/api/placeholder/400/500", 
       bio: "With deep connections in various government departments, Rajesh facilitates smooth processing of applications and clearances."
     },
     {
-      id: "4",
+      id: "5",
       name: "Anita Patel",
       role: "Documentation Specialist",
       image: "/api/placeholder/400/500",
       bio: "Anita's meticulous attention to detail ensures every document is prepared to perfection, reducing processing times significantly."
     },
     {
-      id: "5",
+      id: "6",
       name: "Vikram Singh",
       role: "Business Development",
       image: "/api/placeholder/400/500",
