@@ -13,6 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: [
+          'Inter', 
+          '-apple-system', 
+          'BlinkMacSystemFont', 
+          'SF Pro Display', 
+          'SF Pro Text', 
+          'system-ui', 
+          'Helvetica Neue', 
+          'Arial', 
+          'sans-serif'
+        ],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

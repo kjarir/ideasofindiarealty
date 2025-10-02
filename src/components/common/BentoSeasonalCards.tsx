@@ -9,11 +9,13 @@ export interface BentoSeasonalCardProps {
   imageAlt?: string;
   className?: string;
   size?: 'small' | 'medium' | 'large';
+  onClick?: () => void;
 }
 
 interface BentoSeasonalCardsProps {
   cards: BentoSeasonalCardProps[];
   className?: string;
+  onCardClick?: (card: BentoSeasonalCardProps, index: number) => void;
 }
 
 const BentoSeasonalCard = ({
@@ -24,6 +26,7 @@ const BentoSeasonalCard = ({
   imageAlt,
   className,
   size = 'medium',
+  onClick,
 }: BentoSeasonalCardProps) => {
   const sizeClasses = {
     small: "col-span-1 row-span-1",
@@ -34,7 +37,7 @@ const BentoSeasonalCard = ({
   return (
     <div
       className={cn(
-        "group relative flex flex-col justify-end p-4 sm:p-6 bg-black rounded-lg overflow-hidden shadow-lg transition-all duration-500 hover:scale-[1.02]",
+        "group relative flex flex-col justify-end p-4 sm:p-6 bg-black rounded-lg overflow-hidden shadow-lg transition-all duration-500 hover:scale-[1.02] cursor-pointer",
         sizeClasses[size],
         className
       )}
@@ -43,6 +46,7 @@ const BentoSeasonalCard = ({
           ? 'clamp(300px, 35vw, 400px)' 
           : 'clamp(200px, 25vw, 250px)' 
       }}
+      onClick={onClick}
     >
       <img
         src={imageSrc}
@@ -61,7 +65,7 @@ const BentoSeasonalCard = ({
   );
 };
 
-export function BentoSeasonalCards({ cards, className }: BentoSeasonalCardsProps) {
+export function BentoSeasonalCards({ cards, className, onCardClick }: BentoSeasonalCardsProps) {
   return (
     <div className={cn(
       "grid gap-3 sm:gap-4 w-full", 
@@ -82,6 +86,7 @@ export function BentoSeasonalCards({ cards, className }: BentoSeasonalCardsProps
             index === 1 || index === 2 ? 'medium' : 
             'small'
           }
+          onClick={() => onCardClick?.(card, index)}
         />
       ))}
     </div>

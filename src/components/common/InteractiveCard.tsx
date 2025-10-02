@@ -85,7 +85,7 @@ const InteractiveCard = ({
             )}
             <CardTitle className="text-xl font-bold">
               <m.span
-                animate={{ color: isHovered ? "hsl(var(--primary))" : "hsl(var(--foreground))" }}
+                animate={{ color: isHovered ? "#f59e0b" : "#1f2937" }}
                 transition={{ duration: 0.3 }}
               >
                 {title}

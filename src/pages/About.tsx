@@ -290,14 +290,15 @@ const About = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <LazyMotion features={domAnimation} strict>
-              <m.h2
-                className="text-3xl lg:text-4xl font-bold mb-12"
+              <m.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8 }}
               >
-                Why Choose Us
-              </m.h2>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-12">
+                  Why Choose Us
+                </h2>
+              </m.div>
               
               <m.div
                 className="grid md:grid-cols-3 gap-8 mb-12"
