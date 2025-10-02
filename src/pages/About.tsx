@@ -4,8 +4,10 @@ import InteractiveCard from "@/components/common/InteractiveCard";
 import ScrollProgress from "@/components/common/ScrollProgress";
 import FloatingCTA from "@/components/common/FloatingCTA";
 import TeamCarousel from "@/components/lightswind/team-carousel";
+import { ThreeDScrollTriggerContainer, ThreeDScrollTriggerRow } from "@/components/lightswind/3d-scroll-trigger";
 import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Star } from "lucide-react";
 
 const About = () => {
   const valuesRef = useRef<HTMLDivElement | null>(null);
@@ -81,6 +83,63 @@ const About = () => {
       role: "Business Development",
       image: "/api/placeholder/400/500",
       bio: "Vikram helps businesses understand regulatory requirements and develops customized solutions for their specific needs."
+    }
+  ];
+
+  const testimonials = [
+    {
+      id: 1,
+      name: "Rajesh Patel",
+      company: "Patel Construction Ltd.",
+      role: "Managing Director",
+      content: "Ideas of India Realty made our MHADA approval process seamless. Their attention to detail and professional approach saved us months of delays. Highly recommended!",
+      rating: 5,
+      image: "/api/placeholder/80/80"
+    },
+    {
+      id: 2,
+      name: "Priya Sharma",
+      company: "Sharma Enterprises",
+      role: "CEO",
+      content: "The team's expertise in Mantralaya clearances is unmatched. They guided us through every step and ensured 100% compliance. Exceptional service!",
+      rating: 5,
+      image: "/api/placeholder/80/80"
+    },
+    {
+      id: 3,
+      name: "Amit Kumar",
+      company: "Kumar Real Estate",
+      role: "Director",
+      content: "Professional, reliable, and results-driven. Ideas of India Realty delivered exactly what they promised within the committed timeframe.",
+      rating: 5,
+      image: "/api/placeholder/80/80"
+    },
+    {
+      id: 4,
+      name: "Sunita Joshi",
+      company: "Joshi Developers",
+      role: "Partner",
+      content: "Their business licensing services are top-notch. The team's knowledge of regulatory requirements is impressive and their support is outstanding.",
+      rating: 5,
+      image: "/api/placeholder/80/80"
+    },
+    {
+      id: 5,
+      name: "Vikram Singh",
+      company: "Singh Infrastructure",
+      role: "Founder",
+      content: "We've worked with many consultants, but Ideas of India Realty stands out for their integrity and commitment to client success.",
+      rating: 5,
+      image: "/api/placeholder/80/80"
+    },
+    {
+      id: 6,
+      name: "Meera Reddy",
+      company: "Reddy Properties",
+      role: "Managing Partner",
+      content: "Excellent service for municipal approvals. Their systematic approach and regular updates kept us informed throughout the process.",
+      rating: 5,
+      image: "/api/placeholder/80/80"
     }
   ];
 
@@ -284,6 +343,136 @@ const About = () => {
               </m.p>
             </LazyMotion>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8">
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Don't just take our word for it. Here's what our satisfied clients have to say about our services.
+              </p>
+            </m.div>
+          </LazyMotion>
+          
+          <ThreeDScrollTriggerContainer className="py-8">
+            <ThreeDScrollTriggerRow baseVelocity={1.5} direction={1} className="mb-8">
+              {testimonials.slice(0, 3).map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="mx-3 w-80 sm:w-96 bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6 flex-shrink-0 min-h-[280px] flex flex-col"
+                >
+                  <div className="flex items-start mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-primary font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base truncate">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-gray-600 truncate">
+                        {testimonial.role}
+                      </p>
+                      <p className="text-xs text-primary font-medium truncate">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base flex-1 line-clamp-4">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+              ))}
+            </ThreeDScrollTriggerRow>
+            
+            <ThreeDScrollTriggerRow baseVelocity={1.5} direction={-1}>
+              {testimonials.slice(3, 6).map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="mx-3 w-80 sm:w-96 bg-white rounded-xl shadow-lg border border-gray-100 p-5 sm:p-6 flex-shrink-0 min-h-[280px] flex flex-col"
+                >
+                  <div className="flex items-start mb-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-primary font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-gray-900 text-sm sm:text-base truncate">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs sm:text-sm text-gray-600 truncate">
+                        {testimonial.role}
+                      </p>
+                      <p className="text-xs text-primary font-medium truncate">
+                        {testimonial.company}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base flex-1 line-clamp-4">
+                    "{testimonial.content}"
+                  </p>
+                </div>
+              ))}
+            </ThreeDScrollTriggerRow>
+          </ThreeDScrollTriggerContainer>
+          
+          <LazyMotion features={domAnimation} strict>
+            <m.div
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <p className="text-lg text-muted-foreground mb-6">
+                Join hundreds of satisfied clients who trust Ideas of India Realty for their government service needs.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <div className="flex mr-2">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="font-semibold">4.9/5 Rating</span>
+                </div>
+                <div className="hidden sm:block h-4 w-px bg-gray-300"></div>
+                <div>
+                  <span className="font-semibold">500+</span> Happy Clients
+                </div>
+                <div className="hidden sm:block h-4 w-px bg-gray-300"></div>
+                <div>
+                  <span className="font-semibold">100%</span> Success Rate
+                </div>
+              </div>
+            </m.div>
+          </LazyMotion>
         </div>
       </section>
 
